@@ -10,9 +10,8 @@
             window.onload = () => {
                 console.log('what?')
                 console.log(window);
-                window.Javatari.CARTRIDGE_URL = (window.location.host + window.location.pathname).replace('index.html', '') + `roms/atari/spaceinvaders.A26`
+                window.Javatari.CARTRIDGE_URL = (window.location.href).replace('index.html', '') + `roms/atari/spaceinvaders.A26`
                 window.Javatari.room.start()
-                "realharambe.github.io/Cat-memes/files/javatari/index.htmlroms/atari/spaceinvaders.A26"
         }
         </script>
     </head>
@@ -22,6 +21,7 @@
         <div id="javatari" style="text-align: center; margin: 20px auto 0; padding: 0 10px;">
             <div id="javatari-screen" style="box-shadow: 2px 2px 10px rgba(0, 0, 0, .7);"></div>
         </div>
+        <a href="roms/atari/spaceinvaders.A26">SPACE</a>
 
         <script src="javatari.js"></script>
 
