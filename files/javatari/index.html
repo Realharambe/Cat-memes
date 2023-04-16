@@ -10,8 +10,9 @@
             window.onload = () => {
                 console.log('what?')
                 console.log(window);
-                window.Javatari.CARTRIDGE_URL = window.location.host + window.location.pathname + `roms/atari/spaceinvaders.A26`
+                window.Javatari.CARTRIDGE_URL = (window.location.host + window.location.pathname).replace('index.html', '') + `roms/atari/spaceinvaders.A26`
                 window.Javatari.room.start()
+                "realharambe.github.io/Cat-memes/files/javatari/index.htmlroms/atari/spaceinvaders.A26"
         }
         </script>
     </head>
