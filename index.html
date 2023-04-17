@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container">
   <h1>Welcome To Random Cat Pictures</h1>
   <img id="random-cat-photo" src="https://thecatapi.com/api/images/get?format=src&type=gif" alt="">
@@ -47,6 +48,9 @@
       </ul>
     </li>
   </ul>
+=======
+
+>>>>>>> 2d968b2f0a2ffff077e9fbfc4dcef05c2f27c70a
 
 <!DOCTYPE html>
 <html>
@@ -55,7 +59,12 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-
+    <!-- Moved header image inside of the <html></html> so browser doesn't get confused -->
+    <div class="container">
+    <h1>Welcome To Random Cat Pictures</h1>
+    <img id="random-cat-photo" src="https://thecatapi.com/api/images/get?format=src&type=gif" alt="">
+    <button id="random-cat-button">Get Random Cat!</button>
+    </div>
     <!-- Top Navigation Bar -->
     
     <nav>
@@ -110,6 +119,36 @@
         </a>
       </li>
     </ul>
+    
+    
+    <!-- 
+        We put this script at the end of the <body></body> because
+         if we don't, our buttons won't be on the page yet so we won't
+         be able to grab them.
+    -->
+    <script>
+      // In order to allow the random cat button to show a new image, we need to trick
+      //   the browser into thinking you're asking for a new image. This can be done by
+      //   adding some garbage to the end of the cat api's url.
+      
+      // Here is the non-garbaged url for us to add garbage to.
+      const baseCatUrl = "https://thecatapi.com/api/images/get?format=src&type=gif"
+      
+      // We'll use javascript to grab the button from the html so we can do stuff to it
+      const randomCatButton = document.querySelector('#random-cat-button')
+
+      // We're going to use the cat button we got and "listen" for a user to click on it
+      randomCatButton.addEventListener('click', function (event) {
+        // This is the stuff that happens when a user clicks on the randomCatButton
+        
+        // The same way we got the button, we'll grab the random cat photo
+        const randomCatPhoto = document.querySelector('#random-cat-photo')
+        
+        // This is similar to changing the "src" value in the actual html down below
+        //   except we're doing it automatically in javascript when a user requests it
+        randomCatPhoto.src = baseCatUrl + '&refreshGarbage' + Date.now()
+      })
+    </script>
   </body>
 </html>
 
